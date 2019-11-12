@@ -14,12 +14,6 @@ const routes: Routes = [
                 ]
             },
             {
-                path: 'cities',
-                children: [
-                    { path: '', loadChildren: () => import('../../pages/cities/cities.module').then(x => x.CitiesPageModule) }
-                ]
-            },
-            {
                 path: 'settings',
                 children: [
                     { path: '', loadChildren: () => import('../../pages/settings/settings.module').then(x => x.SettingsPageModule) }
