@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { CitiesPage } from './cities.page';
+import { PopComponent } from 'src/app/components/pop/pop.component';
 
 const routes: Routes = [
   {
@@ -15,12 +16,14 @@ const routes: Routes = [
 ]
 
 @NgModule({
+
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CitiesPage]
+  declarations: [CitiesPage, PopComponent],
+  entryComponents: [PopComponent]
 })
 export class CitiesPageModule { }
