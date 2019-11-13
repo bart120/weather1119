@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cities',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CitiesPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onClickAdd(): void {
+    this.router.navigate(['/pages/cities/add']);
   }
 
 }

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter une ville</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addCityForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nom de la ville:</ion-label>
+        <ion-input formControlName="cityName" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="onSaveClick()">Enregistrer</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>
