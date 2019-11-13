@@ -33,7 +33,14 @@ export class HomePage implements OnInit {
   }
 
   doRefresh(ev: any): void {
-    this.serv.getWeatherByCity('paris').subscribe(data => { this.weather = data; console.log(data); ev.target.complete(); });
+    this.geo.getCurrentPosition().then(
+      data => {
+        console.log(data);
+        this.serv.getWeatherByCoordinate(data.coords.latitude, data.coords.longitude)
+          .subscribe(weat => { this.weather = weat; ev.target.complete(); });
+      }
+    );
+
   }
 
 }
