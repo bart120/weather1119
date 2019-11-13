@@ -14,4 +14,8 @@ export class WeatherService {
         return this.http.get<Weather>(`${environment.url}&q=${city}`);
     }
 
+    getWeatherByCoordinate(lat: number, long: number): Observable<Weather> {
+        return this.http.get<Weather>(`${environment.url}&lat=${lat}&lon=${long}`);
+    }
+
 }

@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,8 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    NativeStorage
+    NativeStorage,
+    Geolocation
   ],
   bootstrap: [AppComponent]
 })
