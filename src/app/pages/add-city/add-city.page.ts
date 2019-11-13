@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-city',
@@ -14,7 +15,8 @@ export class AddCityPage implements OnInit {
     { cityName: new FormControl('', [Validators.required]) }
   );
 
-  constructor(private nativeStorage: NativeStorage, public toastController: ToastController) { }
+  constructor(private nativeStorage: NativeStorage, public toastController: ToastController,
+    private router: Router) { }
 
   ngOnInit() {
   }
@@ -34,6 +36,7 @@ export class AddCityPage implements OnInit {
             });
             toast.present();
             console.log('ok');
+            this.router.navigate(['/pages/cities']);
           }
         ).catch(err => console.log('set', err));
 
@@ -52,6 +55,7 @@ export class AddCityPage implements OnInit {
             });
             toast.present();
             console.log('ok');
+            this.router.navigate(['/pages/cities']);
           }
         ).catch(err => console.log('set', err));
       }

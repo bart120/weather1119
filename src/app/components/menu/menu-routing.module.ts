@@ -14,6 +14,12 @@ const routes: Routes = [
                 ]
             },
             {
+                path: 'home/:cityname',
+                children: [
+                    { path: '', loadChildren: () => import('../../pages/home/home.module').then(m => m.HomePageModule) }
+                ]
+            },
+            {
                 path: 'cities',
                 children: [
                     { path: '', loadChildren: () => import('../../pages/cities/cities.module').then(x => x.CitiesPageModule) },
